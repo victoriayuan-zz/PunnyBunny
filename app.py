@@ -2,6 +2,7 @@ import os
 import sys
 import json
 
+import random
 import requests
 from flask import Flask, request
 
@@ -46,7 +47,7 @@ def webhook():
                             "How do you know if a rabbit is getting old? It's the gray hare.",
                             "You seem to be having a bad hare day"]
                     
-                    send_message(sender_id, puns[0])
+                    send_message(sender_id, random.choice(puns))
                 
                 if messaging_event.get("delivery"):  # delivery confirmation
                     pass
