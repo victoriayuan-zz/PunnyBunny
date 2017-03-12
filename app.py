@@ -42,7 +42,7 @@ def webhook():
                     puns = ["Every bunny was kungfu fighting~",
                             "I'd make a veggie pun but no one would carrot all",
                             "I whip my hare back and forth~",
-                            "And now he’s just some bunny that I used to know~",
+                            "And now he's just some bunny that I used to know~",
                             "How do you know if a rabbit is getting old? It's the gray hare.",
                             "You seem to be having a bad hare day"]
                     
