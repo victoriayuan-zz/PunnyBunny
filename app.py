@@ -46,7 +46,9 @@ send_message(sender_id, "Hello, I'm Punny Bunny. I can tell you a funny bunny pu
                             "I whip my hare back and forth~", "And now he’s just some bunny that I used to know~", 
                             "How do you know if a rabbit is getting old? It’s the gray hare.", "You seem to be having a bad hare day"]
                     
-                    send_message(sender_id, random.choice(puns))
+                    from random import randrange
+                    random_index = randrange(0,len(puns)) 
+                    send_message(sender_id, puns[random_index])
 
                 if messaging_event.get("delivery"):  # delivery confirmation
                     pass
