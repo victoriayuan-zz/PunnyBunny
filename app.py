@@ -20,11 +20,11 @@ def verify():
     
     return "Hello world", 200
 
-first_time = 0
+#first_time = 0
 
 @app.route('/', methods=['POST'])
 def webhook():
-    global first_time
+    #global first_time
     # endpoint for processing incoming messaging events
     print "running webhook"
     data = request.get_json()
@@ -42,42 +42,42 @@ def webhook():
                     message_text = messaging_event["message"]["text"]  # the message's text
                     print first_time
                     
-                    if (first_time == 0):
-                        print "first time" + str(first_time)
-                        first_time += 1
-                        send_message(sender_id, "Hi, I'm Punny Bunny! I can tell you a funny bunny pun. Do you want to hear it?")
+                    #if (first_time == 0):
+                    #    print "first time" + str(first_time)
+                    #    first_time += 1
+                    #    send_message(sender_id, "Hi, I'm Punny Bunny! I can tell you a funny bunny pun. Do you want to hear it?")
 
-                    else:
-                        puns = ["Every bunny was kungfu fighting~!",
-                                "I'd make a veggie pun but no one would carrot all!",
-                                "I whip my hare back and forth~",
-                                "And now he's just some bunny that I used to know~",
-                                "How do you know if I'm getting old? It's the gray hare.",
-                                "You're earrisitable, even on a bad hare day",
-                                "What is my favorite dance style? Hip-hop!",
-                                "What do you get when you cross a bunny with a leaf blower? A hare dryer!",
-                                "What did the bunny give his girlfriend? A 14-carrot ring!",
-                                "How do you know carrots are good for your eyes? Because you never see a bunny wearing glasses!",
-                                "If you have a line of 100 bunnies in a row and 99 of them take one step backwards, what do you have? A receding hare line!",
-                                "How many bunnies does it take to change a lightbulb? Only one if it hops right to it!",
-                                "You must be a chocolate bunny, because I just want to nibble on your ears ;)",
-                                "You must be the Easter Bunny, because you've got a basket full of sweetness ;D",
-                                "What do you call a bunny who was raised in a hotel? An inn-grown hare",
-                                "Where did the bunny groom and the bunny bride go after their wedding? On a bunnymoon!",
-                                "What do you call a bunny housekeeper? A dust bunny!",
-                                "How are bunnies and calculators alike? They both multiply quickly!",
-                                "Hey honey bunny... if you have any good ideas on how to have a hopping good time, I'm all ears.",
-                                "Why did a bald man paint rabbits on his head? because from afar, they look like hares.",
-                                "How does the Easter Bunny stay healthy? Eggsercise, expecially hareobics!",
-                                "What do you get when you cross a spider and a rabbit? a hare net!",
-                                "How did the close race between the tortoise and the hare end? It was won by the thread of a hare!",
-                                "What's the difference between a healthy rabbit and an odd rabbit? One is a fit bunny, the other is a bit funny!",
-                                "What do you call an operation on a rabbit? A hare-cut.",
-                                "Why did the bunny build herself a new house? she we fed up with the hole thing.",
-                                "Why did the bunny bring toilet paper to the party? Because he is a party pooper!",
-                                "What happened when 100 hares got loose on Main Street? The police had to comb the area.",
-                                "What do they call a bunny transformer? Hop-timous Prime."]
-                        send_message(sender_id, random.choice(puns))
+# else:
+                    puns = ["Every bunny was kungfu fighting~!",
+                            "I'd make a veggie pun but no one would carrot all!",
+                            "I whip my hare back and forth~",
+                            "And now he's just some bunny that I used to know~",
+                            "How do you know if I'm getting old? It's the gray hare.",
+                            "You're earrisitable, even on a bad hare day",
+                            "What is my favorite dance style? Hip-hop!",
+                            "What do you get when you cross a bunny with a leaf blower? A hare dryer!",
+                            "What did the bunny give his girlfriend? A 14-carrot ring!",
+                            "How do you know carrots are good for your eyes? Because you never see a bunny wearing glasses!",
+                            "If you have a line of 100 bunnies in a row and 99 of them take one step backwards, what do you have? A receding hare line!",
+                            "How many bunnies does it take to change a lightbulb? Only one if it hops right to it!",
+                            "You must be a chocolate bunny, because I just want to nibble on your ears ;)",
+                            "You must be the Easter Bunny, because you've got a basket full of sweetness ;D",
+                            "What do you call a bunny who was raised in a hotel? An inn-grown hare",
+                            "Where did the bunny groom and the bunny bride go after their wedding? On a bunnymoon!",
+                            "What do you call a bunny housekeeper? A dust bunny!",
+                            "How are bunnies and calculators alike? They both multiply quickly!",
+                            "Hey honey bunny... if you have any good ideas on how to have a hopping good time, I'm all ears.",
+                            "Why did a bald man paint rabbits on his head? because from afar, they look like hares.",
+                            "How does the Easter Bunny stay healthy? Eggsercise, expecially hareobics!",
+                            "What do you get when you cross a spider and a rabbit? a hare net!",
+                            "How did the close race between the tortoise and the hare end? It was won by the thread of a hare!",
+                            "What's the difference between a healthy rabbit and an odd rabbit? One is a fit bunny, the other is a bit funny!",
+                            "What do you call an operation on a rabbit? A hare-cut.",
+                            "Why did the bunny build herself a new house? she we fed up with the hole thing.",
+                            "Why did the bunny bring toilet paper to the party? Because he is a party pooper!",
+                            "What happened when 100 hares got loose on Main Street? The police had to comb the area.",
+                            "What do they call a bunny transformer? Hop-timous Prime."]
+                    send_message(sender_id, random.choice(puns))
                 
                 if messaging_event.get("delivery"):  # delivery confirmation
                     pass
