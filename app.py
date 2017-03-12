@@ -25,7 +25,6 @@ def verify():
 def webhook():
     #global first_time
     # endpoint for processing incoming messaging events
-    print "running webhook"
     data = request.get_json()
     log(data)  # you may not want to log every incoming message in production, but it's good for testing
     
@@ -39,13 +38,7 @@ def webhook():
                     sender_id = messaging_event["sender"]["id"]        # the facebook ID of the person sending you the message
                     recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
                     message_text = messaging_event["message"]["text"]  # the message's text
-                    
-                    #if (first_time == 0):
-                    #    print "first time" + str(first_time)
-                    #    first_time += 1
-                    #    send_message(sender_id, "Hi, I'm Punny Bunny! I can tell you a funny bunny pun. Do you want to hear it?")
-
-# else:
+  
                     puns = ["Every bunny was kungfu fighting~!",
                             "I'd make a veggie pun but no one would carrot all!",
                             "I whip my hare back and forth~",
