@@ -20,11 +20,11 @@ def verify():
     
     return "Hello world", 200
 
-global first_time = True
+first_time = True
 
 @app.route('/', methods=['POST'])
 def webhook():
-    
+    global first_time
     # endpoint for processing incoming messaging events
     
     data = request.get_json()
