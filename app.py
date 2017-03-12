@@ -31,7 +31,7 @@ def webhook():
     
     if data["object"] == "page":
         
-        send_message(sender_id, "Hi, I'm Punny Bunny! I can tell you a funny bunny pun! Do you wanna hear it?")
+        first_time = True
         
         for entry in data["entry"]:
             for messaging_event in entry["messaging"]:
@@ -42,26 +42,30 @@ def webhook():
                     recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
                     message_text = messaging_event["message"]["text"]  # the message's text
                     
-                    puns = ["Every bunny was kungfu fighting~!",
-                            "I'd make a veggie pun but no one would carrot all!",
-                            "I whip my hare back and forth~",
-                            "And now he's just some bunny that I used to know~",
-                            "How do you know if I'm getting old? It's the gray hare.",
-                            "You seem to be having a bad hare day",
-                            "What is my favorite dance style? Hip-hop!",
-                            "What do you get when you cross a bunny with a leaf blower? A hare dryer!",
-                            "What did the bunny give his girlfriend? A 14-carrot ring!",
-                            "How do you know carrots are good for your eyes? Because you never see a bunny wearing glasses!",
-                            "If you have a line of 100 bunnies in a row and 99 of them take one step backwards, what do you have? A receding hare line!",
-                            "How many bunnies does it take to change a lightbulb? Only one if it hops right to it!",
-                            "You must be a chocolate bunny, because I just want to nibble on your ears ;)",
-                            "You must be the Easter Bunny, because you've got a basket full of sweetness ;D",
-                            "What do you call a bunny who was raised in a hotel? An inn-grown hare",
-                            "Where did the bunny groom and the bunny bride go after their wedding? On a bunnymoon!",
-                            "What do you call a bunny housekeeper? A dust bunny!",
-                            "How are bunnies and calculators alike? They both multiply quickly!"]
-                    
-                    send_message(sender_id, random.choice(puns))
+                    if first_time
+                        send_message(sender_id, "Hi, I'm Punny Bunny! I can tell you a funny bunny pun. Do you want to hear it?")
+                        first_time = False
+
+                    else
+                        puns = ["Every bunny was kungfu fighting~!",
+                                "I'd make a veggie pun but no one would carrot all!",
+                                "I whip my hare back and forth~",
+                                "And now he's just some bunny that I used to know~",
+                                "How do you know if I'm getting old? It's the gray hare.",
+                                "You seem to be having a bad hare day",
+                                "What is my favorite dance style? Hip-hop!",
+                                "What do you get when you cross a bunny with a leaf blower? A hare dryer!",
+                                "What did the bunny give his girlfriend? A 14-carrot ring!",
+                                "How do you know carrots are good for your eyes? Because you never see a bunny wearing glasses!",
+                                "If you have a line of 100 bunnies in a row and 99 of them take one step backwards, what do you have? A receding hare line!",
+                                "How many bunnies does it take to change a lightbulb? Only one if it hops right to it!",
+                                "You must be a chocolate bunny, because I just want to nibble on your ears ;)",
+                                "You must be the Easter Bunny, because you've got a basket full of sweetness ;D",
+                                "What do you call a bunny who was raised in a hotel? An inn-grown hare",
+                                "Where did the bunny groom and the bunny bride go after their wedding? On a bunnymoon!",
+                                "What do you call a bunny housekeeper? A dust bunny!",
+                                "How are bunnies and calculators alike? They both multiply quickly!"]
+                        send_message(sender_id, random.choice(puns))
                 
                 if messaging_event.get("delivery"):  # delivery confirmation
                     pass
