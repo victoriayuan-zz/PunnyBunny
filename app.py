@@ -20,7 +20,7 @@ def verify():
     
     return "Hello world", 200
 
-first_time = True
+first_time = True #strugglez
 
 @app.route('/', methods=['POST'])
 def webhook():
