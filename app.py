@@ -47,7 +47,7 @@ def webhook():
                     
                     #from random import randrange
                     #random_index = randint(0,len(puns)-1)
-                    send_message(sender_id, 'a'])
+                    send_message(sender_id, "a"])
 
                 if messaging_event.get("delivery"):  # delivery confirmation
                     pass
