@@ -2,6 +2,7 @@ import os
 import sys
 import json
 
+import random
 import requests
 from flask import Flask, request
 
@@ -39,7 +40,11 @@ def webhook():
                     recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
                     message_text = messaging_event["message"]["text"]  # the message's text
 
-                    send_message(sender_id, "HELLO I'M PUNNY BUNNY <3 <3")
+                    puns = ['Every bunny was kungfu fighting~', 'I’d make a veggie pun but no one would carrot all', 
+                            'I whip my hare back and forth~', 'And now he’s just some bunny that I used to know~', 
+                            'How do you know is a rabbit is getting old? It’s the gray hare.', 'You see to be having a bad hare day']
+                    
+                    send_message(sender_id, random.choice(puns))
 
                 if messaging_event.get("delivery"):  # delivery confirmation
                     pass
