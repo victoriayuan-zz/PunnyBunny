@@ -42,11 +42,11 @@ def webhook():
                     recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
                     message_text = messaging_event["message"]["text"]  # the message's text
                     
-                    if first_time
+                    if first_time:
                         send_message(sender_id, "Hi, I'm Punny Bunny! I can tell you a funny bunny pun. Do you want to hear it?")
                         first_time = False
 
-                    else
+                    else:
                         puns = ["Every bunny was kungfu fighting~!",
                                 "I'd make a veggie pun but no one would carrot all!",
                                 "I whip my hare back and forth~",
