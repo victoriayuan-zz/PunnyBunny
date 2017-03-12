@@ -20,8 +20,8 @@ def verify():
     
     return "Hello world", 200
 
-first_time = True
-
+first_time = 0
+#hello
 @app.route('/', methods=['POST'])
 def webhook():
     global first_time
@@ -41,8 +41,8 @@ def webhook():
                     recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
                     message_text = messaging_event["message"]["text"]  # the message's text
                     
-                    if first_time:
-                        first_time = False
+                    if (first_time == 0):
+                        first_time += 1
                         send_message(sender_id, "Hi, I'm Punny Bunny! I can tell you a funny bunny pun. Do you want to hear it?")
 
                     else:
