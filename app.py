@@ -21,7 +21,7 @@ def verify():
     return "Hello world", 200
 
 first_time = True
-#change
+#ch
 @app.route('/', methods=['POST'])
 def webhook():
     global first_time
