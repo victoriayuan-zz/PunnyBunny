@@ -43,7 +43,7 @@ def webhook():
                     print first_time
                     
                     if (first_time == 0):
-                        print "first time'd" + str(first_time)
+                        print "first time" + str(first_time)
                         first_time += 1
                         send_message(sender_id, "Hi, I'm Punny Bunny! I can tell you a funny bunny pun. Do you want to hear it?")
 
