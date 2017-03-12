@@ -47,8 +47,8 @@ def webhook():
                             "How do you know if a rabbit is getting old? It’s the gray hare.", "You seem to be having a bad hare day"]
                     
                     #from random import randrange
-                    random_index = randint(0,len(puns)-1)
-                    send_message(sender_id, puns[random_index])
+                    #random_index = randint(0,len(puns)-1)
+                    send_message(sender_id, puns[0])
 
                 if messaging_event.get("delivery"):  # delivery confirmation
                     pass
