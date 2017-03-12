@@ -45,7 +45,19 @@ def webhook():
                             "I whip my hare back and forth~",
                             "And now he's just some bunny that I used to know~",
                             "How do you know if a rabbit is getting old? It's the gray hare.",
-                            "You seem to be having a bad hare day"]
+                            "You seem to be having a bad hare day",
+                            "What is a rabbit's favorite dance style? Hip-hop!",
+                            "What do you get when you cross a rabbit with a leaf blower? A hare dryer!",
+                            "What did the rabbit give his girlfriend? A 14-carrot ring!",
+                            "How do you know carrots are good for your eyes? Because you never see a rabbit wearing glasses!",
+                            "If you have a line of 100 rabbits in a row and 99 of them take one step backwards, what do you have? A receding hare line!",
+                            "How many rabbits does it take to change a lightbulb? Only one if it hops right to it!",
+                            "You must be a chocolate bunny, because I just want to nibble on your ears ;)",
+                            "You must be the Easter Bunny, because you've got a basket full of sweetness ;D",
+                            "What do you call a bunny who was raised in a hotel? An inn-grown hare",
+                            "Where did the bunny groom and the bunny bride go after their wedding? On a bunnymoon!",
+                            "What do you call a rabbit housekeeper? A dust bunny!",
+                            "How are rabbits and calculators alike? They both multiply quickly!"]
                     
                     send_message(sender_id, random.choice(puns))
                 
