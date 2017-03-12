@@ -50,7 +50,7 @@ def webhook():
                 if messaging_event.get("postback"):  # user clicked/tapped "postback" button in earlier message
                     pass
 
-return "ok", 200
+    return "ok", 200
 
 
 def send_message(recipient_id, message_text):
@@ -64,14 +64,14 @@ def send_message(recipient_id, message_text):
         "Content-Type": "application/json"
     }
     data = json.dumps({
-                      "recipient": {
-                      "id": recipient_id
-                      },
-                      "message": {
-                      "text": message_text
-                      }
-                      })
-r = requests.post("https://graph.facebook.com/v2.6/me/messages", params=params, headers=headers, data=data)
+        "recipient": {
+            "id": recipient_id
+        },
+        "message": {
+            "text": message_text
+        }
+    })
+    r = requests.post("https://graph.facebook.com/v2.6/me/messages", params=params, headers=headers, data=data)
     if r.status_code != 200:
         log(r.status_code)
         log(r.text)
