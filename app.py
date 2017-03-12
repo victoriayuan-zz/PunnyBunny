@@ -70,7 +70,7 @@ def webhook():
                             "What do they call a bunny transformer? Hop-timous Prime."
                             "When does a bunny chemist tell jokes? Periodically."
                             "Did you hear about the bunny that had his left side cut off? He is all right now!"
-                            "Did you hear about that bunny with a taser> Man, she was stunning!"]
+                            "Did you hear about that bunny with a taser? Man, she was stunning!"]
                     send_message(sender_id, random.choice(puns))
                 
                 if messaging_event.get("delivery"):  # delivery confirmation
