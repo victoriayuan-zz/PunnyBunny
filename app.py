@@ -31,7 +31,7 @@ def webhook():
 
     if data["object"] == "page":
         
-send_message(sender_id, "Hello, I'm Punny Bunny. I can tell you a funny bunny pun. Do you wanna hear it?")
+        #send_message(sender_id, "Hello, I'm Punny Bunny. I can tell you a funny bunny pun. Do you wanna hear it?")
              
         for entry in data["entry"]:
             for messaging_event in entry["messaging"]:
@@ -46,8 +46,8 @@ send_message(sender_id, "Hello, I'm Punny Bunny. I can tell you a funny bunny pu
                             "I whip my hare back and forth~", "And now he’s just some bunny that I used to know~", 
                             "How do you know if a rabbit is getting old? It’s the gray hare.", "You seem to be having a bad hare day"]
                     
-                    from random import randrange
-                    random_index = randrange(0,len(puns)) 
+                    #from random import randrange
+                    random_index = randint(0,len(puns)-1)
                     send_message(sender_id, puns[random_index])
 
                 if messaging_event.get("delivery"):  # delivery confirmation
