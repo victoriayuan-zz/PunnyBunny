@@ -30,7 +30,9 @@ def webhook():
     log(data)  # you may not want to log every incoming message in production, but it's good for testing
 
     if data["object"] == "page":
-
+        
+send_message(sender_id, "Hello, I'm Punny Bunny. I can tell you a funny bunny pun. Do you wanna hear it?")
+             
         for entry in data["entry"]:
             for messaging_event in entry["messaging"]:
 
@@ -42,7 +44,7 @@ def webhook():
 
                     puns = ["Every bunny was kungfu fighting~", "I’d make a veggie pun but no one would carrot all", 
                             "I whip my hare back and forth~", "And now he’s just some bunny that I used to know~", 
-                            "How do you know is a rabbit is getting old? It’s the gray hare.", "You see to be having a bad hare day"]
+                            "How do you know if a rabbit is getting old? It’s the gray hare.", "You seem to be having a bad hare day"]
                     
                     send_message(sender_id, random.choice(puns))
 
