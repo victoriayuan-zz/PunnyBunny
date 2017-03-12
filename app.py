@@ -40,10 +40,10 @@ def webhook():
                     message_text = messaging_event["message"]["text"]  # the message's text
                     
                     puns = ["Every bunny was kungfu fighting~",
-                            "I’d make a veggie pun but no one would carrot all",
+                            "I'd make a veggie pun but no one would carrot all",
                             "I whip my hare back and forth~",
                             "And now he’s just some bunny that I used to know~",
-                            "How do you know if a rabbit is getting old? It’s the gray hare.",
+                            "How do you know if a rabbit is getting old? It's the gray hare.",
                             "You seem to be having a bad hare day"]
                     
                     send_message(sender_id, puns[0])
