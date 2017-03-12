@@ -20,6 +20,7 @@ def verify():
     
     return "Hello world", 200
 
+first_time = True
 
 @app.route('/', methods=['POST'])
 def webhook():
@@ -30,8 +31,6 @@ def webhook():
     log(data)  # you may not want to log every incoming message in production, but it's good for testing
     
     if data["object"] == "page":
-        
-        first_time = True
         
         for entry in data["entry"]:
             for messaging_event in entry["messaging"]:
