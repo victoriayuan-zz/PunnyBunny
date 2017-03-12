@@ -42,13 +42,12 @@ def webhook():
                     recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
                     message_text = messaging_event["message"]["text"]  # the message's text
 
-                    puns = ['Every bunny was kungfu fighting~', 'I’d make a veggie pun but no one would carrot all',
-                            'I whip my hare back and forth~', 'And now he’s just some bunny that I used to know~',
+                    puns = ['Every bunny was kungfu fighting~', 'I’d make a veggie pun but no one would carrot all', 'I whip my hare back and forth~', 'And now he’s just some bunny that I used to know~',
                             'How do you know if a rabbit is getting old? It’s the gray hare.', 'You seem to be having a bad hare day']
                     
                     #from random import randrange
                     #random_index = randint(0,len(puns)-1)
-                    send_message(sender_id, puns[0])
+                    send_message(sender_id, 'a'])
 
                 if messaging_event.get("delivery"):  # delivery confirmation
                     pass
