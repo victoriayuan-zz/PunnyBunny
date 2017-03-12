@@ -42,8 +42,8 @@ def webhook():
                     message_text = messaging_event["message"]["text"]  # the message's text
                     
                     if first_time:
-                        send_message(sender_id, "Hi, I'm Punny Bunny! I can tell you a funny bunny pun. Do you want to hear it?")
                         first_time = False
+                        send_message(sender_id, "Hi, I'm Punny Bunny! I can tell you a funny bunny pun. Do you want to hear it?")
 
                     else:
                         puns = ["Every bunny was kungfu fighting~!",
